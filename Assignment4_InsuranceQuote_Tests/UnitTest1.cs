@@ -198,37 +198,37 @@ namespace Assignment4_InsuranceQuote_Tests
 
             AssertNoQuoteAndError("phone", "phone format");
         }
-        //[Test] // 05 – accept either jQuery label or HTML5 invalid state
-        //public void InsuranceQuote05_InvalidEmail_ShouldBlock()
-        //{
-        //    FillCommonFields(email: "john.doe@"); // clearly invalid
-        //    FillDriving(28, 3, 0);
-        //    BlurField("email");
-        //    Submit();
+        [Test] // 05 – accept either jQuery label or HTML5 invalid state
+        public void InsuranceQuote05_InvalidEmail_ShouldBlock()
+        {
+            FillCommonFields(email: "john.doe@"); // clearly invalid
+            FillDriving(28, 3, 0);
+            BlurField("email");
+            Submit();
 
-        //    // HTML5 validity or jQuery label — either is fine
-        //    var emailEl = driver!.FindElement(By.Id("email"));
-        //    bool html5Invalid = (bool)((IJavaScriptExecutor)driver)
-        //        .ExecuteScript("return arguments[0].matches(':invalid')", emailEl);
-        //    bool labelInvalid = WaitForError("email");
+            // HTML5 validity or jQuery label — either is fine
+            var emailEl = driver!.FindElement(By.Id("email"));
+            bool html5Invalid = (bool)((IJavaScriptExecutor)driver)
+                .ExecuteScript("return arguments[0].matches(':invalid')", emailEl);
+            bool labelInvalid = WaitForError("email");
 
-        //    var quote = GetQuoteValueOrEmpty();
-        //    Assert.That(quote, Is.EqualTo("").Or.EqualTo("$").Or.EqualTo("$0").IgnoreCase,
-        //        "Quote should not be shown for invalid email.");
-        //    Assert.IsTrue(html5Invalid || labelInvalid, "Expected validation for email format (HTML5 or label).");
-        //}
+            var quote = GetQuoteValueOrEmpty();
+            Assert.That(quote, Is.EqualTo("").Or.EqualTo("$").Or.EqualTo("$0").IgnoreCase,
+                "Quote should not be shown for invalid email.");
+            Assert.IsTrue(html5Invalid || labelInvalid, "Expected validation for email format (HTML5 or label).");
+        }
 
 
-        //[Test] // 06 (fixed blur)
-        //public void InsuranceQuote06_InvalidPostal_ShouldBlock()
-        //{
-        //    FillCommonFields(postal: "N2B2S8"); // invalid (no space)
-        //    FillDriving(35, 15, 1);
-        //    BlurField("postalCode");
-        //    Submit();
+        [Test] // 06 (fixed blur)
+        public void InsuranceQuote06_InvalidPostal_ShouldBlock()
+        {
+            FillCommonFields(postal: "N2B2S8"); // invalid (no space)
+            FillDriving(35, 15, 1);
+            BlurField("postalCode");
+            Submit();
 
-        //    AssertNoQuoteAndError("postalCode", "postal code pattern");
-        //}
+            AssertNoQuoteAndError("postalCode", "postal code pattern");
+        }
 
         //[Test] // 07 (blur age)
         //public void InsuranceQuote07_AgeOmitted_ShouldBlock()
