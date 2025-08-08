@@ -252,38 +252,38 @@ namespace Assignment4_InsuranceQuote_Tests
             AssertNoQuoteAndError("accidents", "accidents required");
         }
 
-        //[Test] // 09
-        //public void InsuranceQuote09_ExperienceOmitted_ShouldBlock()
-        //{
-        //    FillCommonFields();
-        //    FillDriving(45, null, 0);
-        //    BlurField("experience");
-        //    Submit();
+        [Test] // 09
+        public void InsuranceQuote09_ExperienceOmitted_ShouldBlock()
+        {
+            FillCommonFields();
+            FillDriving(45, null, 0);
+            BlurField("experience");
+            Submit();
 
-        //    AssertNoQuoteAndError("experience", "experience required");
-        //}
+            AssertNoQuoteAndError("experience", "experience required");
+        }
 
-        //[Test] // 10
-        //public void InsuranceQuote10_Age16_Exp0_Acc0_ShouldQuote7000()
-        //{
-        //    FillCommonFields();
-        //    FillDriving(16, 0, 0);
-        //    Submit();
+        [Test] // 10
+        public void InsuranceQuote10_Age16_Exp0_Acc0_ShouldQuote7000()
+        {
+            FillCommonFields();
+            FillDriving(16, 0, 0);
+            Submit();
 
-        //    var result = GetQuoteValueOrEmpty();
-        //    StringAssert.Contains("7000", result);
-        //}
+            var result = GetQuoteValueOrEmpty();
+            StringAssert.Contains("7000", result);
+        }
 
-        //[Test] // 11
-        //public void InsuranceQuote11_Age30_Exp2_Acc0_ShouldQuote3905()
-        //{
-        //    FillCommonFields();
-        //    FillDriving(30, 2, 0);
-        //    Submit();
+        [Test] // 11
+        public void InsuranceQuote11_Age30_Exp2_Acc0_ShouldQuote3905()
+        {
+            FillCommonFields();
+            FillDriving(30, 2, 0);
+            Submit();
 
-        //    var result = GetQuoteValueOrEmpty();
-        //    StringAssert.Contains("3905", result);
-        //}
+            var result = GetQuoteValueOrEmpty();
+            StringAssert.Contains("3905", result);
+        }
 
         //[Test] // 12
         //public void InsuranceQuote12_Age45_Exp25_Acc0_ShouldQuote2840()
