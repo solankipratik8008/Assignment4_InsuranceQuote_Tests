@@ -230,27 +230,27 @@ namespace Assignment4_InsuranceQuote_Tests
             AssertNoQuoteAndError("postalCode", "postal code pattern");
         }
 
-        //[Test] // 07 (blur age)
-        //public void InsuranceQuote07_AgeOmitted_ShouldBlock()
-        //{
-        //    FillCommonFields();
-        //    FillDriving(null, 5, 0);
-        //    BlurField("age");
-        //    Submit();
+        [Test] // 07 (blur age)
+        public void InsuranceQuote07_AgeOmitted_ShouldBlock()
+        {
+            FillCommonFields();
+            FillDriving(null, 5, 0);
+            BlurField("age");
+            Submit();
 
-        //    AssertNoQuoteAndError("age", "age required");
-        //}
+            AssertNoQuoteAndError("age", "age required");
+        }
 
-        //[Test] // 08 (blur accidents)
-        //public void InsuranceQuote08_AccidentsOmitted_ShouldBlock()
-        //{
-        //    FillCommonFields();
-        //    FillDriving(37, 8, null);
-        //    BlurField("accidents");
-        //    Submit();
+        [Test] // 08 (blur accidents)
+        public void InsuranceQuote08_AccidentsOmitted_ShouldBlock()
+        {
+            FillCommonFields();
+            FillDriving(37, 8, null);
+            BlurField("accidents");
+            Submit();
 
-        //    AssertNoQuoteAndError("accidents", "accidents required");
-        //}
+            AssertNoQuoteAndError("accidents", "accidents required");
+        }
 
         //[Test] // 09
         //public void InsuranceQuote09_ExperienceOmitted_ShouldBlock()
