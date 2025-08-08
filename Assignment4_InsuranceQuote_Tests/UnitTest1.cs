@@ -285,49 +285,49 @@ namespace Assignment4_InsuranceQuote_Tests
             StringAssert.Contains("3905", result);
         }
 
-        //[Test] // 12
-        //public void InsuranceQuote12_Age45_Exp25_Acc0_ShouldQuote2840()
-        //{
-        //    FillCommonFields();
-        //    FillDriving(45, 25, 0);
-        //    Submit();
+        [Test] // 12
+        public void InsuranceQuote12_Age45_Exp25_Acc0_ShouldQuote2840()
+        {
+            FillCommonFields();
+            FillDriving(45, 25, 0);
+            Submit();
 
-        //    var result = GetQuoteValueOrEmpty();
-        //    StringAssert.Contains("2840", result);
-        //}
+            var result = GetQuoteValueOrEmpty();
+            StringAssert.Contains("2840", result);
+        }
 
-        //// 13 (replaced): No-discount base $4000 (exp ≥10, age <30)
-        //[Test]
-        //public void InsuranceQuote13_Age29_Exp12_Acc0_NoDiscount_ShouldQuote4000()
-        //{
-        //    FillCommonFields();
-        //    FillDriving(29, 12, 0); // age < 30, exp ≥ 10 => base $4000, no discount
-        //    Submit();
+        // 13 (replaced): No-discount base $4000 (exp ≥10, age <30)
+        [Test]
+        public void InsuranceQuote13_Age29_Exp12_Acc0_NoDiscount_ShouldQuote4000()
+        {
+            FillCommonFields();
+            FillDriving(29, 12, 0); // age < 30, exp ≥ 10 => base $4000, no discount
+            Submit();
 
-        //    var result = GetQuoteValueOrEmpty();
-        //    StringAssert.Contains("4000", result);
-        //}
+            var result = GetQuoteValueOrEmpty();
+            StringAssert.Contains("4000", result);
+        }
 
-        //[Test] // 14
-        //public void InsuranceQuote14_NegativeAccidents_ShouldBlock()
-        //{
-        //    FillCommonFields();
-        //    FillDriving(32, 5, -1);
-        //    BlurField("accidents");
-        //    Submit();
+        [Test] // 14
+        public void InsuranceQuote14_NegativeAccidents_ShouldBlock()
+        {
+            FillCommonFields();
+            FillDriving(32, 5, -1);
+            BlurField("accidents");
+            Submit();
 
-        //    AssertNoQuoteAndError("accidents", "non-negative integer");
-        //}
+            AssertNoQuoteAndError("accidents", "non-negative integer");
+        }
 
-        //[Test] // 15
-        //public void InsuranceQuote15_Age30_Exp1_Acc0_NoDiscount_ShouldQuote5500()
-        //{
-        //    FillCommonFields();
-        //    FillDriving(30, 1, 0);
-        //    Submit();
+        [Test] // 15
+        public void InsuranceQuote15_Age30_Exp1_Acc0_NoDiscount_ShouldQuote5500()
+        {
+            FillCommonFields();
+            FillDriving(30, 1, 0);
+            Submit();
 
-        //    var result = GetQuoteValueOrEmpty();
-        //    StringAssert.Contains("5500", result);
-        //}
+            var result = GetQuoteValueOrEmpty();
+            StringAssert.Contains("5500", result);
+        }
     }
 }
